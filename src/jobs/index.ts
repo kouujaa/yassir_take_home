@@ -1,0 +1,1 @@
+export { parisAirQualityJob } from "./functions/parisAirQuality";
