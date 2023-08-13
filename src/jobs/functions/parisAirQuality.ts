@@ -1,8 +1,8 @@
 import axios from "axios";
 import { createTypedLogger, env } from "../../helpers";
-import { AirQuality } from "../../model";
+import { AirQuality } from "../../models";
 
-const logger = createTypedLogger("src/job/paris_air_quality.ts");
+const logger = createTypedLogger("src/jobs/functions/parisAirQuality.ts");
 
 export const parisAirQualityJob = async () => {
   const IQAIR_API_KEY = env("iq_air_api_key");
@@ -24,9 +24,9 @@ export const parisAirQualityJob = async () => {
     });
 
     await newAirQuality.save();
-    console.log('Air quality data saved:', airQualityData);
-    console.log('Air quality data saved:', newAirQuality);
+    logger.info({msg : 'Air quality data saved:', airQualityData});
+    logger.info({msg: 'Air quality data saved:', newAirQuality});
   } catch (error) {
-    console.error('Error fetching or saving air quality data:', error);
+    logger.error({msg: 'Error fetching or saving air quality data:', error});
   }
 }

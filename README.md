@@ -39,6 +39,7 @@ The tests are written using Jest
 
 - `src`: contains the source code
 - `src/models`: contains the database models
+- `src/controllers`: contains the controllers
 - `src/routes`: contains the api routes
 - `src/services`: contains the services
 - `src/helpers`: contains the helpers

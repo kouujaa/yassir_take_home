@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createTypedLogger, env } from "../helpers";
-import { AirQuality } from "../model";
+import { AirQuality } from "../models";
 
 const IQAIR_API_KEY = env("iq_air_api_key");
 const logger = createTypedLogger("src/service/airQuality.ts");

@@ -1,15 +1,17 @@
 module.exports = {
     preset: 'ts-jest',
+    collectCoverage: true,
     collectCoverageFrom: [
-        'src/**/*.{ts}',
-        // '!src/**/*.d.ts',
+        'src/**/*.ts',
+        '!src/jobs/**',
+        '!src/server.ts',
     ],
     coverageThreshold: {
         global: {
             branches: 80,
             functions: 80,
             lines: 80,
-            statements: -10
+            statements: 10
         }
     },
     transform: {
@@ -17,5 +19,7 @@ module.exports = {
     },
     testEnvironment: 'node',
     setupFilesAfterEnv: ['./jest.setup.ts'],
+    setupFiles: ['dotenv/config']
 
 }
+

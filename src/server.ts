@@ -8,7 +8,7 @@ import morgan from "morgan";
 // local
 import { createTypedLogger, env } from "./helpers";
 import { parisAirQualityJob } from "./jobs";
-import iqAir from "./routes/iqAir";
+import {airQualityRouter} from "./routes";
 const logger = createTypedLogger("src/server.ts");
 
 
@@ -42,7 +42,7 @@ async function main() {
   /*********************
    * REST API
    * *******************/
-  app.use(`/iqAir`, iqAir);
+  app.use(`/iqAir`, airQualityRouter);
   app.get(`/`, (req, res) => {
     res.send("Hello World!");
   });
