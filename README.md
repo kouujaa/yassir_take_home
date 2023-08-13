@@ -47,7 +47,11 @@ The tests are written using Jest
 
 ## Endpoints
 
-### GET /iqAir/air-quality
+### BASE_URL
+
+http://localhost:5000/iqAir
+
+### GET /air-quality
 
 make a call to IQAIR API to get “air quality“ for the given zone
 
@@ -56,7 +60,7 @@ make a call to IQAIR API to get “air quality“ for the given zone
 - `latitude`: latitude of the location
 - `longitude`: longitude of the location
 
-##### GET /iqAir/most-polluted-zone
+##### GET /most-polluted-zone
 
 Get Datetime( date and time ) where the paris zone is the most polluted ( based on your CRON JOB results).
 
@@ -83,4 +87,5 @@ the database is hosted on MongoDB Atlas
 The cron job is scheduled to run every 1 minutes
 
 ## Notes
+
 for testing purposes, the .env file is included in the project
